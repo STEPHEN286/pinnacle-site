@@ -11,11 +11,11 @@ const Header = () => {
       name: 'Products', 
       href: '/products',
       submenu: [
-        { name: 'Individual Life', href: '/products#individual' },
-        { name: 'Group Life', href: '/products#group' },
-        { name: 'Investment Plans', href: '/products#investment' },
-        { name: 'Education Plans', href: '/products#education' },
-        { name: 'Funeral Plans', href: '/products#funeral' }
+        { name: 'Individual Life', href: '/products/individual' },
+        { name: 'Group Insurance', href: '/products/group' },
+        { name: 'Education Plans', href: '/products/education' },
+        { name: 'Pension Plans', href: '/products/pension' },
+        { name: 'Protection Plans', href: '/products/protection' }
       ]
     },
     { name: 'Claims', href: '/claims' },

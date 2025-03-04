@@ -7,6 +7,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Board from '@/pages/Board';
 import Products from '@/pages/Products';
+import ProductDetail from '@/pages/ProductDetail';
 import Claims from '@/pages/Claims';
 import Contact from '@/pages/Contact';
 import News from '@/pages/News';
@@ -39,7 +40,36 @@ const router = createBrowserRouter([
       },
       {
         path: '/products',
-        element: <Products />
+        children: [
+          {
+            index: true,
+            element: <Products />
+          },
+          {
+            path: ':productId',
+            element: <ProductDetail />
+          },
+          {
+            path: 'individual',
+            element: <Products />,
+          },
+          {
+            path: 'group',
+            element: <Products />,
+          },
+          {
+            path: 'education',
+            element: <Products />,
+          },
+          {
+            path: 'pension',
+            element: <Products />,
+          },
+          {
+            path: 'protection',
+            element: <Products />,
+          }
+        ]
       },
       {
         path: '/claims',
