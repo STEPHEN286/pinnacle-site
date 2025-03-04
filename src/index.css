@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --radius-button: 0.5rem;
+  --font-sans: "Inter", system-ui;
+  
+  /* Colors */
+  --color-primary: #dc2626;
+  --color-primary-hover: #b91c1c;
+  --color-primary-active: #991b1b;
+  --color-secondary: #e5e7eb;
+  --color-secondary-hover: #d1d5db;
+  --color-secondary-active: #9ca3af;
+  --color-success: #16a34a;
+  --color-success-hover: #15803d;
+  --color-success-active: #166534;
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-active: #991b1b;
+  
+  /* Sizes */
+  --size-button-sm: 2rem;    /* h-8 */
+  --size-button-md: 2.5rem;  /* h-10 */
+  --size-button-lg: 3rem;    /* h-12 */
+}
+
+@layer utilities {
+  .rounded-button {
+    border-radius: var(--radius-button);
+  }
+  
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  
+  .hover\:bg-primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+  
+  .active\:bg-primary:active {
+    background-color: var(--color-primary-active);
+  }
+  
+  .text-primary {
+    color: var(--color-primary);
+  }
+  
+  .border-primary {
+    border-color: var(--color-primary);
+  }
+}
