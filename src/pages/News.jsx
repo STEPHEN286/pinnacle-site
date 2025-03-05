@@ -98,7 +98,12 @@ const News = () => {
                   <p className="text-gray-600 mb-4">{article.summary}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{article.author}</span>
-                    <Button variant="outline">Read More</Button>
+                    <Button 
+                      variant="outline" 
+                      className="text-[11px] sm:text-xs md:text-sm h-8 sm:h-9 px-3 sm:px-4 font-medium"
+                    >
+                      Read More
+                    </Button>
                   </div>
                 </div>
               </Card>

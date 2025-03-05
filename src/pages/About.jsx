@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/sections/HeroSection';
 
 const About = () => {
+  const navigate = useNavigate();
+
   // ============= Company Overview Data =============
   const stats = [
     { label: 'Years of Experience', value: '25+' },
@@ -224,6 +227,7 @@ const About = () => {
               <Button 
                 size="lg"
                 className="w-full sm:w-auto bg-white text-red-600 hover:bg-gray-100 font-semibold py-6 sm:py-5"
+                onClick={() => navigate('/quote')}
               >
                 Get a Quote
               </Button>
@@ -231,6 +235,7 @@ const About = () => {
                 variant="outline" 
                 size="lg"
                 className="w-full sm:w-auto border-2 border-white bg-white text-white hover:bg-white hover:text-red-600 font-semibold py-6 sm:py-5"
+                onClick={() => navigate('/contact')}
               >
                 Contact Us
               </Button>

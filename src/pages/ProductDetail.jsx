@@ -134,8 +134,11 @@ const ProductDetail = () => {
             <Card className="p-6 mb-8 sticky top-24">
               <h3 className="text-xl font-semibold mb-6">Get Started Today</h3>
               <div className="space-y-4">
-                <Button className="w-full" size="lg">
-                  <i className="fas fa-calculator mr-2"></i>
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto"
+                  onClick={() => navigate('/quote')}
+                >
                   Get a Quote
                 </Button>
                 <Button variant="outline" className="w-full" size="lg">
@@ -206,8 +209,11 @@ const ProductDetail = () => {
               Let us help you choose the right insurance solution for your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600" size="lg">
-                <i className="fas fa-calculator mr-2"></i>
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto"
+                onClick={() => navigate('/quote')}
+              >
                 Get a Quote
               </Button>
               <Button className="bg-white text-red-600 hover:bg-gray-100" size="lg">

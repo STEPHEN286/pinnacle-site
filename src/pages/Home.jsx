@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -61,6 +61,8 @@ const Home = () => {
     { value: '500+', label: 'Insurance Experts' }
   ];
 
+  const navigate = useNavigate();
+
   return (
     <main>
       {/* Hero Section */}
@@ -86,6 +88,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="w-full sm:w-auto min-w-[200px] text-sm md:text-base py-6 sm:py-5"
+                onClick={() => navigate('/quote')}
               >
                 Get Started Now
               </Button>
@@ -93,6 +96,7 @@ const Home = () => {
                 variant="outline" 
                 size="lg"
                 className="w-full sm:w-auto min-w-[200px] text-white border-white hover:bg-white/10 text-sm md:text-base py-6 sm:py-5"
+                onClick={() => navigate('/contact')}
               >
                 Speak to an Advisor
               </Button>
@@ -180,13 +184,18 @@ const Home = () => {
               help protect your future.
             </p>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              <Button size="lg" className="min-w-[160px] md:min-w-[200px] text-sm md:text-base">
+              <Button 
+                size="lg" 
+                className="min-w-[160px] md:min-w-[200px] text-sm md:text-base"
+                onClick={() => navigate('/quote')}
+              >
                 Get a Quote
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="min-w-[160px] md:min-w-[200px] border-white text-white hover:bg-white hover:text-gray-900 text-sm md:text-base"
+                onClick={() => navigate('/contact')}
               >
                 Contact Us
               </Button>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -111,7 +112,7 @@ const Header = () => {
 
             {/* Action Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <Button>Get a Quote</Button>
+              <Button onClick={() => navigate('/quote')}>Get a Quote</Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -156,7 +157,7 @@ const Header = () => {
                 ))}
               </nav>
               <div className="mt-6">
-                <Button className="w-full">Get a Quote</Button>
+                <Button className="w-full" onClick={() => navigate('/quote')}>Get a Quote</Button>
               </div>
             </div>
           </div>

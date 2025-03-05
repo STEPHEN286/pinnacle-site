@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/sections/HeroSection';
@@ -7,6 +7,7 @@ import { productCategories } from '@/data/dummyProducts';
 
 const Products = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const path = location.pathname.split('/')[2];
@@ -38,8 +39,13 @@ const Products = () => {
             </li>
           ))}
         </ul>
-        <Link to={`/products/${product.id}`}>
-          <Button className="w-full text-sm md:text-base">Learn More</Button>
+        <Link to={`/products/${product.id}`} className="block w-full">
+          <Button 
+            className="w-full text-[11px] sm:text-xs md:text-sm h-8 sm:h-9 md:h-10 px-3 sm:px-4 md:px-4 font-medium"
+            variant="default"
+          >
+            Learn More
+          </Button>
         </Link>
       </div>
     </Card>
@@ -192,7 +198,11 @@ const Products = () => {
               Speak with our insurance advisors to find the right coverage for your needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 text-sm md:text-base">
+              <Button 
+                size="lg" 
+                className="w-full sm:w-auto"
+                onClick={() => navigate('/quote')}
+              >
                 Get a Quote
               </Button>
               <Button className="bg-white text-red-600 hover:bg-gray-100 text-sm md:text-base">
