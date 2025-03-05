@@ -156,130 +156,112 @@ const products = {
 
 export const productCategories = {
   individual: products.individual.map(product => ({
-    id: product.name.toLowerCase().replace(/ /g, '-'),
-    name: product.name,
-    description: product.description,
-    category: 'Individual Life Insurance',
-    features: product.features,
+    ...product,
+    id: product.name.toLowerCase().replace(/\s+/g, '-'),
     benefits: [
-      'Financial security for your loved ones',
-      'Tax-advantaged savings component',
-      'Flexible premium payment options',
-      'Coverage that grows with your needs'
+      'Life coverage',
+      'Investment growth',
+      'Tax advantages',
+      'Flexible premium options'
     ],
     eligibility: [
-      'Age 18-65 years',
-      'Valid identification',
-      'Good health condition',
-      'Ghanaian resident or citizen'
-    ],
-    icon: product.icon,
-    image: 'https://public.readdy.ai/ai/img_res/dfb189457cf3c25ac94cf41494bcd2b1.jpg',
-    highlights: [
-      { title: 'Coverage Amount', value: 'Up to GH₵ 1,000,000' },
-      { title: 'Premium Payment', value: 'Monthly/Quarterly/Annually' },
-      { title: 'Policy Term', value: '10-30 years' },
-      { title: 'Free Look Period', value: '30 days' }
-    ],
-    additionalInfo: {
-      premiumRange: 'GH₵ 100 - GH₵ 5,000 per month',
-      minTerm: '10 years',
-      maxTerm: '30 years',
-      maxEntryAge: '65 years',
-      minEntryAge: '18 years',
-      maxCoverage: 'GH₵ 1,000,000'
-    }
-  })),
-  education: products.education.map(product => ({
-    id: product.name.toLowerCase().replace(/ /g, '-'),
-    name: product.name,
-    description: product.description,
-    category: 'Education Plans',
-    features: product.features,
-    benefits: [
-      'Guaranteed education fund for your children',
-      'Protection against unforeseen circumstances',
-      'Competitive investment returns',
-      'Flexible payment schedule'
-    ],
-    eligibility: [
-      'Parents aged 18-60 years',
-      'Children under 18 years',
-      'Valid identification',
-      'Ghanaian resident or citizen'
-    ],
-    icon: product.icon,
-    image: 'https://public.readdy.ai/ai/img_res/e028051d4e4a477255260c555dd7add6.jpg',
-    highlights: [
-      { title: 'Coverage Amount', value: 'Up to GH₵ 500,000' },
-      { title: 'Premium Payment', value: 'Monthly/Quarterly/Annually' },
-      { title: 'Policy Term', value: '5-20 years' },
-      { title: 'Free Look Period', value: '30 days' }
-    ],
-    additionalInfo: {
-      premiumRange: 'GH₵ 50 - GH₵ 2,000 per month',
-      minTerm: '5 years',
-      maxTerm: '20 years',
-      maxEntryAge: '60 years',
-      minEntryAge: '18 years',
-      maxCoverage: 'GH₵ 500,000'
-    }
-  })),
-  group: products.group.map(product => ({
-    id: product.name.toLowerCase().replace(/ /g, '-'),
-    name: product.name,
-    description: product.description,
-    category: 'Group Insurance',
-    features: product.features,
-    benefits: [
-      'Financial security for employees',
-      'Tax benefits for employers',
-      'Customizable coverage options',
-      'Easy administration'
-    ],
-    eligibility: [
-      'Registered organizations',
-      'Minimum 10 employees',
-      'Valid business documentation',
-      'Employee age 18-65 years'
-    ],
-    icon: product.icon,
-    image: 'https://public.readdy.ai/ai/img_res/group-insurance.jpg',
-    highlights: [
-      { title: 'Coverage Amount', value: 'Customizable per group' },
-      { title: 'Premium Payment', value: 'Monthly/Quarterly/Annually' },
-      { title: 'Policy Term', value: 'Annual renewable' },
-      { title: 'Group Size', value: '10+ employees' }
-    ],
-    additionalInfo: {
-      premiumRange: 'Customized based on group size',
-      minGroupSize: '10 employees',
-      renewalTerms: 'Annual',
-      maxEntryAge: '65 years',
-      minEntryAge: '18 years',
-      coverageOptions: 'Flexible per organization'
-    }
-  })),
-  pension: products.pension.map(product => ({
-    id: product.name.toLowerCase().replace(/ /g, '-'),
-    name: product.name,
-    description: product.description,
-    category: 'Pension Plans',
-    features: product.features,
-    benefits: [
-      'Tax-efficient retirement savings',
-      'Investment growth potential',
-      'Flexible contribution options',
-      'Guaranteed retirement income'
-    ],
-    eligibility: [
-      'Age 18-55 years',
+      'Age 18-65',
       'Valid identification',
       'Regular income source',
       'Ghanaian resident or citizen'
     ],
     icon: product.icon,
-    image: 'https://public.readdy.ai/ai/img_res/pension-plan.jpg',
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop",
+    highlights: [
+      { title: 'Coverage Range', value: 'Up to GHS 500,000' },
+      { title: 'Premium Options', value: 'Monthly/Quarterly/Annually' },
+      { title: 'Investment Options', value: 'Multiple choices' },
+      { title: 'Maturity Period', value: '10-30 years' }
+    ],
+    additionalInfo: {
+      'Minimum Premium': 'GHS 100/month',
+      'Maximum Age': '65 years',
+      'Waiting Period': '6 months',
+      'Surrender Value': 'Available after 3 years'
+    }
+  })),
+  education: products.education.map(product => ({
+    ...product,
+    id: product.name.toLowerCase().replace(/\s+/g, '-'),
+    benefits: [
+      'Education funding',
+      'Life coverage',
+      'Investment growth',
+      'Flexible withdrawals'
+    ],
+    eligibility: [
+      'Age 18-50',
+      'Valid identification',
+      'Regular income source',
+      'Ghanaian resident or citizen'
+    ],
+    icon: product.icon,
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop",
+    highlights: [
+      { title: 'Coverage Range', value: 'Up to GHS 300,000' },
+      { title: 'Premium Options', value: 'Monthly/Quarterly/Annually' },
+      { title: 'Investment Options', value: 'Multiple choices' },
+      { title: 'Maturity Period', value: '5-20 years' }
+    ],
+    additionalInfo: {
+      'Minimum Premium': 'GHS 50/month',
+      'Maximum Age': '50 years',
+      'Waiting Period': '6 months',
+      'Partial Withdrawals': 'Available for education'
+    }
+  })),
+  group: products.group.map(product => ({
+    ...product,
+    id: product.name.toLowerCase().replace(/\s+/g, '-'),
+    benefits: [
+      'Group coverage',
+      'Cost-effective premiums',
+      'Administrative support',
+      'Flexible terms'
+    ],
+    eligibility: [
+      'Minimum 10 employees',
+      'Valid business registration',
+      'Active business operations',
+      'Regular payroll'
+    ],
+    icon: product.icon,
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1470&auto=format&fit=crop",
+    highlights: [
+      { title: 'Coverage Range', value: 'Up to GHS 1,000,000' },
+      { title: 'Premium Options', value: 'Monthly/Quarterly' },
+      { title: 'Group Size', value: '10+ employees' },
+      { title: 'Policy Term', value: '1-5 years' }
+    ],
+    additionalInfo: {
+      'Minimum Group Size': '10 employees',
+      'Maximum Age': '70 years',
+      'Waiting Period': '3 months',
+      'Portability': 'Available'
+    }
+  })),
+  pension: products.pension.map(product => ({
+    ...product,
+    id: product.name.toLowerCase().replace(/\s+/g, '-'),
+    benefits: [
+      'Retirement income',
+      'Tax advantages',
+      'Investment growth',
+      'Flexible contributions'
+    ],
+    eligibility: [
+      'Age 18-60',
+      'Valid identification',
+      'Regular income source',
+      'Ghanaian resident or citizen'
+    ],
+    icon: product.icon,
+    image: "https://images.unsplash.com/photo-1718010588689-9806ce642d39?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     highlights: [
       { title: 'Contribution Range', value: 'Flexible amounts' },
       { title: 'Payment Options', value: 'Monthly/Quarterly/Annually' },
@@ -287,47 +269,40 @@ export const productCategories = {
       { title: 'Retirement Age', value: '60 years' }
     ],
     additionalInfo: {
-      contributionRange: 'Flexible based on income',
-      retirementAge: '60 years',
-      minContributionPeriod: '5 years',
-      maxEntryAge: '55 years',
-      minEntryAge: '18 years',
-      investmentOptions: 'Conservative to Aggressive'
+      'Minimum Contribution': 'GHS 100/month',
+      'Maximum Age': '60 years',
+      'Vesting Period': '5 years',
+      'Lump Sum': 'Available at retirement'
     }
   })),
   protection: products.protection.map(product => ({
-    id: product.name.toLowerCase().replace(/ /g, '-'),
-    name: product.name,
-    description: product.description,
-    category: 'Protection Plans',
-    features: product.features,
+    ...product,
+    id: product.name.toLowerCase().replace(/\s+/g, '-'),
     benefits: [
-      'Debt-free legacy for family',
-      'Affordable premiums',
-      'Easy application process',
-      'Immediate coverage'
+      'Loan protection',
+      'Mortgage coverage',
+      'Flexible terms',
+      'Quick claims'
     ],
     eligibility: [
-      'Age 18-65 years',
-      'Valid loan agreement',
-      'Good health condition',
+      'Age 18-60',
+      'Valid identification',
+      'Active loan/mortgage',
       'Ghanaian resident or citizen'
     ],
     icon: product.icon,
-    image: 'https://public.readdy.ai/ai/img_res/loan-protection.jpg',
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1470&auto=format&fit=crop",
     highlights: [
-      { title: 'Coverage Amount', value: 'Equal to loan amount' },
-      { title: 'Premium Payment', value: 'Single or regular payment' },
-      { title: 'Policy Term', value: 'Matches loan tenure' },
-      { title: 'Processing Time', value: '24-48 hours' }
+      { title: 'Coverage Range', value: 'Up to loan amount' },
+      { title: 'Premium Options', value: 'Monthly/Quarterly' },
+      { title: 'Policy Term', value: 'Matches loan term' },
+      { title: 'Claims Period', value: '30 days' }
     ],
     additionalInfo: {
-      maxLoanCoverage: 'Based on loan amount',
-      premiumType: 'Single or regular',
-      maxTerm: 'Matches loan tenure',
-      maxEntryAge: '65 years',
-      minEntryAge: '18 years',
-      claimSettlement: '24-48 hours'
+      'Minimum Coverage': 'GHS 10,000',
+      'Maximum Age': '60 years',
+      'Waiting Period': '3 months',
+      'Claims Process': '30 days'
     }
   }))
 };

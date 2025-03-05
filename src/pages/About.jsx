@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import HeroSection from '@/components/sections/HeroSection';
 
 const About = () => {
+  // ============= Company Overview Data =============
   const stats = [
     { label: 'Years of Experience', value: '25+' },
     { label: 'Satisfied Clients', value: '100K+' },
@@ -11,6 +12,7 @@ const About = () => {
     { label: 'Claims Processed', value: '500K+' }
   ];
 
+  // ============= Core Values Data =============
   const values = [
     {
       title: 'Trust',
@@ -34,6 +36,7 @@ const About = () => {
     }
   ];
 
+  // ============= Company History Data =============
   const milestones = [
     {
       year: '1995',
@@ -57,6 +60,7 @@ const About = () => {
     }
   ];
 
+  // ============= Leadership Team Data =============
   const leadership = [
     {
       name: 'Dr. Kwame Mensah',
@@ -79,28 +83,30 @@ const About = () => {
   ];
 
   return (
-    <main className="pt-20">
+    <main className="pt-16 md:pt-20">
+      {/* ============= Hero Section ============= */}
       <HeroSection 
         title="About Pinnacle Life"
         description="Leading the way in innovative insurance solutions across Ghana, protecting what matters most to you and your loved ones."
         image="https://public.readdy.ai/ai/img_res/c5d24adc1953eafb00e514a5f0654c10.jpg"
       />
 
+      {/* ============= Company Overview Section ============= */}
       {/* Vision & Mission */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-red-50 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-red-600">Our Vision</h2>
-              <p className="text-gray-700">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-12">
+            <div className="bg-red-50 p-6 md:p-8 rounded-lg">
+              <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-red-600">Our Vision</h2>
+              <p className="text-sm md:text-base text-gray-700">
                 To be the most trusted and innovative insurance provider in Africa, 
                 empowering individuals and businesses to achieve financial security 
                 and peace of mind.
               </p>
             </div>
-            <div className="bg-red-50 p-8 rounded-lg">
-              <h2 className="text-2xl font-bold mb-4 text-red-600">Our Mission</h2>
-              <p className="text-gray-700">
+            <div className="bg-red-50 p-6 md:p-8 rounded-lg">
+              <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-red-600">Our Mission</h2>
+              <p className="text-sm md:text-base text-gray-700">
                 To provide exceptional insurance solutions through professional expertise,
                 innovative products, and superior customer service, while maintaining the
                 highest standards of integrity and corporate responsibility.
@@ -110,50 +116,50 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      {/* Company Stats */}
+      <section className="py-12 md:py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="p-6 text-center bg-gray-800 border-gray-700">
-                <div className="text-3xl font-bold text-red-500 mb-2">{stat.value}</div>
-                <div className="text-gray-300">{stat.label}</div>
+              <Card key={index} className="p-4 md:p-6 text-center bg-gray-800 border-gray-700">
+                <div className="text-2xl md:text-3xl font-bold text-red-500 mb-1 md:mb-2">{stat.value}</div>
+                <div className="text-sm md:text-base text-gray-300">{stat.label}</div>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="bg-gray-50 py-20">
+      {/* ============= Company Values Section ============= */}
+      <section className="bg-gray-50 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Core Values</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <i className={`fas ${value.icon} text-3xl text-red-600 mb-4`}></i>
-                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+              <Card key={index} className="p-4 md:p-6 text-center hover:shadow-lg transition-shadow">
+                <i className={`fas ${value.icon} text-2xl md:text-3xl text-red-600 mb-3 md:mb-4`}></i>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{value.title}</h3>
+                <p className="text-sm md:text-base text-gray-600">{value.description}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* History Timeline */}
-      <section className="py-20">
+
+      <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
-          <div className="space-y-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Journey</h2>
+          <div className="space-y-6 md:space-y-8">
             {milestones.map((milestone, index) => (
-              <div key={index} className="flex items-start gap-6">
-                <div className="flex-shrink-0 w-24 pt-1">
-                  <div className="text-xl font-bold text-red-600">{milestone.year}</div>
+              <div key={index} className="flex items-start gap-4 md:gap-6">
+                <div className="flex-shrink-0 w-20 md:w-24 pt-1">
+                  <div className="text-lg md:text-xl font-bold text-red-600">{milestone.year}</div>
                 </div>
                 <div className="flex-grow">
-                  <div className="h-full border-l-2 border-red-200 pl-6">
-                    <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
-                    <p className="text-gray-600">{milestone.description}</p>
+                  <div className="h-full border-l-2 border-red-200 pl-4 md:pl-6">
+                    <h3 className="text-lg md:text-xl font-semibold mb-1 md:mb-2">{milestone.title}</h3>
+                    <p className="text-sm md:text-base text-gray-600">{milestone.description}</p>
                   </div>
                 </div>
               </div>
@@ -162,22 +168,22 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leadership */}
-      <section className="bg-gray-50 py-20">
+    
+      <section className="bg-gray-50 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Leadership</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Leadership</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {leadership.map((leader, index) => (
               <Card key={index} className="overflow-hidden">
                 <img 
                   src={leader.image} 
                   alt={leader.name} 
-                  className="w-full h-64 object-cover"
+                  className="w-full h-48 md:h-64 object-cover"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-1">{leader.name}</h3>
-                  <div className="text-red-600 mb-3">{leader.role}</div>
-                  <p className="text-gray-600">{leader.description}</p>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-semibold mb-1">{leader.name}</h3>
+                  <div className="text-red-600 mb-2 md:mb-3">{leader.role}</div>
+                  <p className="text-sm md:text-base text-gray-600">{leader.description}</p>
                 </div>
               </Card>
             ))}
@@ -185,46 +191,46 @@ const About = () => {
         </div>
       </section>
 
-      {/* Regulatory Info */}
-      <section className="py-20">
+   
+      <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <Card className="p-8">
-              <h2 className="text-2xl font-bold mb-6">Regulatory Information</h2>
-              <p className="text-gray-600 mb-6">
+            <Card className="p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Regulatory Information</h2>
+              <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
                 Pinnacle Life Insurance is licensed and regulated by the National Insurance
                 Commission (NIC) of Ghana. We maintain the highest standards of compliance
                 and corporate governance in all our operations.
               </p>
-              <div className="flex gap-4">
-                <Button>View Our Licenses</Button>
-                <Button variant="outline">Download Annual Report</Button>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                <Button className="w-full sm:w-auto">View Our Licenses</Button>
+                <Button variant="outline" className="w-full sm:w-auto">Download Annual Report</Button>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-red-600 text-white py-20">
+    
+      <section className="bg-red-600 text-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Our Growing Family</h2>
-            <p className="text-xl mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Join Our Growing Family</h2>
+            <p className="text-base md:text-xl mb-6 md:mb-8">
               Experience the difference with an insurance provider that truly cares
               about your financial security and peace of mind.
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
               <Button 
                 size="lg"
-                className="bg-white text-red-600 hover:bg-gray-100"
+                className="w-full sm:w-auto bg-white text-red-600 hover:bg-gray-100 font-semibold py-6 sm:py-5"
               >
                 Get a Quote
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white text-white hover:bg-white/10"
+                className="w-full sm:w-auto border-2 border-white bg-white text-white hover:bg-white hover:text-red-600 font-semibold py-6 sm:py-5"
               >
                 Contact Us
               </Button>

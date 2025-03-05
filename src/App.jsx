@@ -11,6 +11,11 @@ import ProductDetail from '@/pages/ProductDetail';
 import Claims from '@/pages/Claims';
 import Contact from '@/pages/Contact';
 import News from '@/pages/News';
+import Careers from '@/pages/Careers';
+import Management from '@/pages/Management';
+import Payment from '@/pages/Payment';
+import Quote from '@/pages/Quote';
+import FindAgent from '@/pages/FindAgent';
 
 const Layout = () => {
   return (
@@ -37,6 +42,26 @@ const router = createBrowserRouter([
       {
         path: '/board',
         element: <Board />
+      },
+      {
+        path: '/management',
+        element: <Management />
+      },
+      {
+        path: '/careers',
+        element: <Careers />
+      },
+      {
+        path: '/payment',
+        element: <Payment />
+      },
+      {
+        path: '/quote',
+        element: <Quote />
+      },
+      {
+        path: '/find-agent',
+        element: <FindAgent />
       },
       {
         path: '/products',

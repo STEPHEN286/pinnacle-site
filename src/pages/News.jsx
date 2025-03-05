@@ -36,33 +36,33 @@ const News = () => {
   const galleryImages = [
     {
       title: 'Annual Staff Conference 2024',
-      image: 'https://public.readdy.ai/ai/img_res/15c11e55fd70986008a6ffee427d1239.jpg',
+      image: 'https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg',
       category: 'Events'
     },
     {
-      title: 'Customer Service Week Celebration',
-      image: 'https://public.readdy.ai/ai/img_res/e028051d4e4a477255260c555dd7add6.jpg',
-      category: 'Events'
+      title: 'Ghana Business Summit',
+      image: 'https://images.pexels.com/photos/3184462/pexels-photo-3184462.jpeg',
+      category: 'Business'
     },
     {
-      title: 'Insurance Awareness Campaign',
-      image: 'https://public.readdy.ai/ai/img_res/8cad8d6ae4a2e4faaf681fbfe3537be8.jpg',
-      category: 'Community'
+      title: 'Community Health Screening',
+      image: 'https://images.pexels.com/photos/3184464/pexels-photo-3184464.jpeg',
+      category: 'Healthcare'
     },
     {
-      title: 'Board Meeting 2024',
-      image: 'https://public.readdy.ai/ai/img_res/15c11e55fd70986008a6ffee427d1239.jpg',
+      title: 'Traditional Business Meeting',
+      image: 'https://images.pexels.com/photos/3184466/pexels-photo-3184466.jpeg',
       category: 'Corporate'
     },
     {
-      title: 'Training Workshop',
-      image: 'https://public.readdy.ai/ai/img_res/e028051d4e4a477255260c555dd7add6.jpg',
-      category: 'Training'
+      title: 'Youth Empowerment Program',
+      image: 'https://images.pexels.com/photos/3184468/pexels-photo-3184468.jpeg',
+      category: 'CSR'
     },
     {
-      title: 'Community Outreach Program',
-      image: 'https://public.readdy.ai/ai/img_res/8cad8d6ae4a2e4faaf681fbfe3537be8.jpg',
-      category: 'CSR'
+      title: 'African Business Leaders Forum',
+      image: 'https://images.pexels.com/photos/3184470/pexels-photo-3184470.jpeg',
+      category: 'Leadership'
     }
   ];
 
@@ -107,7 +107,7 @@ const News = () => {
         </div>
       </section>
 
-      {/* Photo Gallery Section */}
+      
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Photo Gallery</h2>
@@ -125,7 +125,7 @@ const News = () => {
                     className="w-full h-64 object-cover rounded-lg"
                   />
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded-lg flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-opacity-50 transition-opacity rounded-lg flex items-center justify-center">
                   <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity p-4">
                     <h3 className="text-lg font-semibold mb-2">{image.title}</h3>
                     <span className="text-sm">{image.category}</span>
@@ -140,18 +140,29 @@ const News = () => {
       {/* Image Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 overflow-y-auto"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="max-w-4xl w-full bg-white rounded-lg overflow-hidden">
-            <img 
-              src={selectedImage.image} 
-              alt={selectedImage.title}
-              className="w-full h-auto"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold mb-2">{selectedImage.title}</h3>
-              <p className="text-gray-600">{selectedImage.category}</p>
+          <div 
+            className="w-full max-w-4xl bg-white rounded-lg overflow-hidden relative my-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors z-10"
+            >
+              <i className="fas fa-times text-xl"></i>
+            </button>
+            <div className="relative">
+              <img 
+                src={selectedImage.image} 
+                alt={selectedImage.title}
+                className="w-full h-auto max-h-[80vh] object-contain"
+              />
+            </div>
+            <div className="p-6 bg-white">
+              <h3 className="text-2xl font-semibold mb-2">{selectedImage.title}</h3>
+              <p className="text-gray-600 text-lg">{selectedImage.category}</p>
             </div>
           </div>
         </div>
