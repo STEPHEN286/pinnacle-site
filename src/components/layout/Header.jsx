@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -36,7 +36,6 @@ const Header = () => {
 
   return (
     <>
-      
       <div className="bg-red-600 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-10 text-sm">
@@ -52,8 +51,8 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-4">
-                <Link to="/find-agent" className="hover:text-gray-200">Find an Agent</Link>
-                <Link to="/payment" className="hover:text-gray-200">Make a Payment</Link>
+                <NavLink to="/find-agent" className={({ isActive }) => isActive ? "text-gray-200" : "hover:text-gray-200"}>Find an Agent</NavLink>
+                <NavLink to="/payment" className={({ isActive }) => isActive ? "text-gray-200" : "hover:text-gray-200"}>Make a Payment</NavLink>
               </div>
               <div className="flex items-center gap-3">
                 <a href="https://facebook.com/pinnaclelife" target="_blank" rel="noopener noreferrer">
@@ -71,38 +70,39 @@ const Header = () => {
         </div>
       </div>
 
-      
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            
             <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold text-red-600">Pinnacle Life</span>
             </Link>
 
-           
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
                 <div key={link.name} className="relative group">
-                  <Link 
+                  <NavLink 
                     to={link.href}
-                    className="text-gray-700 hover:text-red-600 font-medium py-8"
+                    className={({ isActive }) => 
+                      `text-gray-700 hover:text-red-600 font-medium py-8 ${isActive ? 'text-red-600 font-bold' : ''}`
+                    }
                   >
                     {link.name}
                     {link.submenu && (
-                      <i className="fas fa-chevron-down ml-2 text-xs "></i>
+                      <i className="fas fa-chevron-down ml-2 text-xs"></i>
                     )}
-                  </Link>
+                  </NavLink>
                   {link.submenu && (
-                    <div className="absolute top-full z-10  left-0 w-64 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block">
+                    <div className="absolute top-full z-10 left-0 w-64 bg-white shadow-lg rounded-lg py-2 hidden group-hover:block">
                       {link.submenu.map((sublink) => (
-                        <Link
+                        <NavLink
                           key={sublink.name}
                           to={sublink.href}
-                          className="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600"
+                          className={({ isActive }) => 
+                            `block px-4 py-2 hover:bg-red-50 hover:text-red-600 ${isActive ? 'bg-red-50 text-red-600 font-medium' : 'text-gray-700'}`
+                          }
                         >
                           {sublink.name}
-                        </Link>
+                        </NavLink>
                       ))}
                     </div>
                   )}
@@ -110,12 +110,10 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Action Buttons */}
             <div className="hidden lg:flex items-center gap-4">
               <Button onClick={() => navigate('/quote')}>Get a Quote</Button>
             </div>
-
-            {/* Mobile Menu Button */}
+            
             <button
               className="lg:hidden p-2"
               onClick={() => setIsOpen(!isOpen)}
@@ -125,31 +123,34 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="lg:hidden bg-white border-t">
             <div className="max-w-7xl mx-auto px-4 py-4">
               <nav className="space-y-4">
                 {navLinks.map((link) => (
                   <div key={link.name}>
-                    <Link 
+                    <NavLink 
                       to={link.href}
-                      className="block text-gray-700 hover:text-red-600 font-medium py-2"
+                      className={({ isActive }) => 
+                        `block font-medium py-2 hover:text-red-600 ${isActive ? 'text-red-600' : 'text-gray-700'}`
+                      }
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
-                    </Link>
+                    </NavLink>
                     {link.submenu && (
                       <div className="pl-4 mt-2 space-y-2">
                         {link.submenu.map((sublink) => (
-                          <Link
+                          <NavLink
                             key={sublink.name}
                             to={sublink.href}
-                            className="block text-gray-600 hover:text-red-600 py-1"
+                            className={({ isActive }) => 
+                              `block py-1 hover:text-red-600 ${isActive ? 'text-red-600' : 'text-gray-600'}`
+                            }
                             onClick={() => setIsOpen(false)}
                           >
                             {sublink.name}
-                          </Link>
+                          </NavLink>
                         ))}
                       </div>
                     )}
@@ -167,4 +168,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

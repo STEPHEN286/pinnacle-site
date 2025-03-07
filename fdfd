@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Item Request Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="min-h-screen flex flex-col">
+        <nav class="bg-white border-b border-gray-200">            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">                        <div class="flex-shrink-0 flex items-center">
+                            <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo">                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow">            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                <div class="bg-white shadow rounded-lg p-6 sm:p-8">                    <div class="mb-8">
+                        <h1 class="text-2xl font-semibold text-gray-900 flex items-center gap-2">                            <i class="fas fa-clipboard-list text-custom"></i>
+                            Item Request Form
+                        </h1>                        <p class="mt-2 text-sm text-gray-600">Please fill in the details below to submit your item request.</p>
+                    </div>                    <form class="space-y-8">
+                        <div class="space-y-6">
+                            <h2 class="text-lg font-medium text-gray-900">Personal Information</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                <div>                                    <label class="block text-sm font-medium text-gray-700">Full Name *</label>
+                                    <input type="text" required class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter your full name">                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Email Address *</label>
+                                    <input type="email" required class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter your email">                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                    <input type="tel" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter your phone number">                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700">Delivery Address</label>
+                                    <textarea rows="3" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter your delivery address"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">                            <h2 class="text-lg font-medium text-gray-900">Item Details</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Item Name *</label>
+                                    <input type="text" required class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter item name">                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Category</label>
+                                    <select class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button">                                        <option value="">Select a category</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="furniture">Furniture</option>
+                                        <option value="office">Office Supplies</option>
+                                        <option value="other">Other</option>
+                                    </select>                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Quantity</label>
+                                    <input type="number" min="1" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter quantity">                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Preferred Brand</label>
+                                    <input type="text" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Enter preferred brand">                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700">Item Description</label>
+                                    <textarea rows="4" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Describe the item in detail"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">                            <h2 class="text-lg font-medium text-gray-900">Request Specifications</h2>
+                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Budget Range</label>
+                                    <div class="mt-1 grid grid-cols-2 gap-4">
+                                        <input type="number" class="block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Min">                                        <input type="number" class="block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Max">                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Preferred Delivery Date</label>
+                                    <input type="date" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button">                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700">Urgency Level</label>
+                                    <div class="mt-2 flex gap-4">
+                                        <label class="inline-flex items-center">                                            <input type="radio" name="urgency" value="low" class="text-custom focus:ring-custom">                                            <span class="ml-2 text-sm text-gray-700">Low</span>
+                                        </label>                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="urgency" value="medium" class="text-custom focus:ring-custom">                                            <span class="ml-2 text-sm text-gray-700">Medium</span>
+                                        </label>                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="urgency" value="high" class="text-custom focus:ring-custom">                                            <span class="ml-2 text-sm text-gray-700">High</span>
+                                        </label>                                    </div>
+                                </div>
+                                <div class="sm:col-span-2">                                    <label class="block text-sm font-medium text-gray-700">Additional Notes</label>
+                                    <textarea rows="4" class="mt-1 block w-full border-gray-300 focus:border-custom focus:ring-custom !rounded-button" placeholder="Any additional information"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">                            <h2 class="text-lg font-medium text-gray-900">Request Status</h2>
+                            <div class="bg-gray-50 p-4 rounded-lg">                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                    <div>
+                                        <span class="text-sm font-medium text-gray-500">Status</span>
+                                        <p class="mt-1 text-sm font-semibold text-yellow-600">Pending</p>
+                                    </div>                                    <div>
+                                        <span class="text-sm font-medium text-gray-500">Last Updated</span>
+                                        <p class="mt-1 text-sm text-gray-900">Not updated yet</p>
+                                    </div>                                    <div>
+                                        <span class="text-sm font-medium text-gray-500">Admin Comments</span>
+                                        <p class="mt-1 text-sm text-gray-900">No comments yet</p>
+                                    </div>                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 justify-end pt-6">                            <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 !rounded-button hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom">                                Clear Form
+                            </button>
+                            <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-custom !rounded-button hover:bg-custom/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom">                                Submit Request
+                            </button>
+                        </div>
+                    </form>                </div>
+            </div> 
+        </main>
+
+        <footer class="bg-white border-t border-gray-200">
+            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">                <div class="py-4">
+                    <p class="text-center text-sm text-gray-500">Need help? Contact support at support@example.com</p>                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
